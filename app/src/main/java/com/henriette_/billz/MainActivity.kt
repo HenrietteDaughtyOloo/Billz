@@ -1,44 +1,37 @@
 package com.henriette_.billz
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.henriette_.billz.databinding.ActivityLogInBinding
+import com.henriette_.billz.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityLogInBinding
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLogInBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setContentView(R.layout.activity_main)
     }
 
     override fun onResume() {
         super.onResume()
-        binding.btnLogIn.setOnClickListener {}
 
-    }
-
-    fun validate() {
-        clearErrors()
-        val person1 = binding.etLogUserName.text.toString()
-        val person2 = binding.etLogPassword.text.toString()
-        var error = false
-
-        if (person1.isBlank()) {
-            binding.tilLogUserName.error = "User Name is required to proceed"
-            error = true
-
+        binding.btnGetStarted?.setOnClickListener {
+            val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
+            finish()
         }
-//        binding.tilLogPassword.text = result.toString()
+        binding.tvAlreadyHave?.setOnClickListener {
+            val intent = Intent(this,LogInActivity::class.java )
+            startActivity(intent)
+            finish()
+        }
 
 
     }
 
-    private fun clearErrors() {
-        binding.tilLogUserName.error=null
-        binding.tilLogPassword.error=null
-    }
+
 }
-
-
