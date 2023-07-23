@@ -1,4 +1,4 @@
-package com.henriette_.billz
+package com.henriette_.billz.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -17,9 +17,14 @@ class LogInActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         binding.btnLogIn.setOnClickListener {
-            val intent = Intent(this,HomeActivity::class.java)
+            val intent=Intent(this,HomeActivity::class.java)
             startActivity(intent)
             finish()
         }
+//        binding.btnLogIn.setOnClickListener {
+//            val intent = Intent(this, HomeActivity::class.java)
+//            startActivity(intent)
+//            finish()
+//        }
     }
 }

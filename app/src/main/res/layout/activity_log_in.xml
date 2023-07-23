@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#A4D6A6"
-    tools:context=".LogInActivity">
+    tools:context=".ui.LogInActivity">
 
     <TextView
         android:id="@+id/tvLogIn"
@@ -74,4 +74,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/profile" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
